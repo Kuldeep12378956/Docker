@@ -26,17 +26,38 @@ Disadvantes of Docker -
 
 Docker Basic Commands - 
 
-``` docker images ```   To check the Images on the Host
-``` docker search jenkins ``` to search for the jenkins image 
-``` docker pull jenkins ``` to pull the jenkins image from the dockerhub to your Host 
-``` docker run -it --name <container name> <image name> /bin/bash ``` to run the container & give it name 
-``` service docker status``` to check the service is start or not 
-``` docker start <container name> ``` to start the stopped container 
-``` docker attach  <container name> ``` to go inside the container
-``` docker ps -a ``` to check status of all the container running or stopped
-``` docker ps ``` to check the status of running container
-``` docker stop <containername> ``` to stop the running container 
-``` docker rm <container name> ```  to delete the container 
+``` docker images ```   
+To check the Images on the Host
+
+``` docker search jenkins ``` 
+to search for the jenkins image 
+
+``` docker pull jenkins ``` 
+to pull the jenkins image from the dockerhub to your Host 
+
+``` docker run -it --name <container name> <image name> /bin/bash ``` 
+to run the container & give it name 
+
+``` service docker status``` 
+to check the service is start or not 
+
+``` docker start <container name> ``` 
+to start the stopped container 
+
+``` docker attach  <container name> ``` 
+to go inside the container
+
+``` docker ps -a ``` 
+to check status of all the container running or stopped
+
+``` docker ps ``` 
+to check the status of running container
+
+``` docker stop <containername> ``` 
+to stop the running container 
+
+``` docker rm <container name> ```  
+to delete the container 
 
 
 
