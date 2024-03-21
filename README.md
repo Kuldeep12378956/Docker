@@ -5,6 +5,11 @@ Docker is opensource centralize platform design to Create, Deploy and run applic
 Docker is OS level Virtualization technique, That can help us create Containers on the OS, 
 Container uses the base host image as the OS image of itself. & resources it get as per requirement from H/W. it is very lieghtweight. 
 
+# Docker Architecht :- 
+![Screenshot 2023-04-14 at 7 06 46 PM](DockerArch-2-1024x458.png)
+
+
+
 ## Advantages of Docker :- 
 
 1. Lightweight 
