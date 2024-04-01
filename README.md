@@ -91,8 +91,36 @@ docker rm <container name>
 ************************************************************************
 
 
+TO DELETE THE DOCKER IMAGES. 
+
+```
+docker rmi <image name>
+```
+
+➡️ # Port Mapping :- 
+
+```
+docker run -p hostport:conatinerport <Image Name>
+```
+
+➡️ # Run Vloume Mapping 
+
+To Keep data Persistent, we can use Volume Map option to map the container vlume with Host Directory,
+
+```
+docker run -v /opt/datadir:/var/lib/mysql <Image-Name>
+```
+               Host Dir:Container volume
 
 
+➡️ # To inspect the Docker Container
+
+```
+docker inspect <container name>
+```
+
+➡️ 
+ 
 
 
    
