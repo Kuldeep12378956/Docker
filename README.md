@@ -230,7 +230,105 @@ if we want to run a complex application need multiple containers of diff os it c
 
 However the easiest way to do this is do it with Docker Compose file. 
 
+Here is the example of Docker Compose file. 
+
+docker-compose.yml
+
+```
+redis:
+     image: redis
+db:
+     image: postgres:9.4
+vote:
+     image: voting-app
+     ports:
+         - 5000:80
+     links:
+         - redis
+result:
+     image: result
+     ports:
+         - 5001:80
+     links:
+         - db
+worker:
+     image: worker
+     links:
+         - db
+         - redis
+```
 
 
+It is also possible that you want to build the image in compose file. in that case you will have to use the BUILD Argument in the Docker compose file.also you need to keep the Docker compose file and the code in the repository of the Github.  
+here is the example compose file. 
 
+
+```
+redis:
+     image: redis
+db:
+     image: postgres:9.4
+vote:
+     build: ./vote
+     ports:
+         - 5000:80
+     links:
+         - redis
+result:
+     build: ./result
+     ports:
+         - 5001:80
+     links:
+         - db
+worker:
+     build: ./worker
+     links:
+         - db
+         - redis
+```
+## Docker Compose Version :- 
+
+Version 1 :- It has limitaton that you can not define dependency in this version of Compose file  also you can not run container in different network. 
+
+Version 2 :- In this type of compose file, we can add the dependency if we any application is dependent on any other server or application we can mention that 
+             in this version of Compose file also format has been changed. we will have to mention the Version on Docker compose on the top of the Docker 
+             Compose file & below all the thing need to kept under services object. also we don't have to mention the links of the application to other 
+             application, it will do it itself. 
+             also we can add depends_on: property to mention the dependency of one application on other. 
+             
+
+Version 3 :-  its syntax are almost similar to v2 to Docker compose the only difference is it supports Docker swarm. 
+
+*************************************************************************************************
+
+# Docker registry :- 
+
+Docker reistry is where all the docker images are placed. docker.io is the registry for dockerhub
+
+Image: docker.io/nginx/nginx
+       Registry/User_Account/image_repository.
+
+
+To keep the personalized docker image we can create our private docker registory and to pull and push the docker images we will have to Login on the Private Registry 
+
+```
+docker login private-registry.io
+```
+
+How to deploy Private registory :- 
+
+```
+docker run -d -p 5000:5000 --name registry registry:2
+```
+```
+docker image tag my-image localhost:5000/my-image
+```
+```
+docker push localhost:5000/my-image
+```
+```
+docker pull localhost:5000/my-image
+```
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
