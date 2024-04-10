@@ -224,9 +224,11 @@ Layered Architecture -
 
 # Docker Compose 
 
-if we want to run a complex application need multiple containers of diff os it can be done by using Docker Compose. 
+if we want to run a complex application need multiple containers of diff os it can be done by using Docker Compose. But it need all the Containers to be linked with each other. to get this application work. Below is the screenshot of how to link these container which each other which look bit complex to do manuall. 
 
 ![Screenshot 2023-04-14 at 7 06 46 PM](image2.png)
+
+However the easiest way to do this is do it with Docker Compose file. 
 
 
 
