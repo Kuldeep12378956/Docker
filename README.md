@@ -218,6 +218,7 @@ by default it create the folder structure while install docker
 
 Layered Architecture - 
 
+![Screenshot 2023-04-14 at 7 06 46 PM](image.png)
 
 
 
