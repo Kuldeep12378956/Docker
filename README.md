@@ -211,16 +211,20 @@ file system
 by default it create the folder structure while install docker 
 
 /var/lib/docker
-  > aufs
-  > Containers
-  > images
-  > volumes
+  aufs
+  Containers
+  images
+  volumes
 
 Layered Architecture - 
 
 ![Screenshot 2023-04-14 at 7 06 46 PM](image.png)
 
 
+
+# Docker Compose 
+
+if we want to run a complex application need multiple containers of diff os it can be done by using Docker Compose. 
 
 
 
