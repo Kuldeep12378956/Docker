@@ -119,11 +119,107 @@ docker run -v /opt/datadir:/var/lib/mysql <Image-Name>
 docker inspect <container name>
 ```
 
-➡️ 
- 
+➡️ CMD vs Entrypoint
+
+CMD is the argument in the Dockerfile that defines what command or service should be run when Container starts. 
+
+for example 
+
+```
+docker run ubuntu sleep 5
+```
+
+if you want to create the Ubuntu image that will sleep after 5 sec if doesn't find the the shell or terminal. 
+
+This is How Docker file will look alike. 
+
+```
+FROM Ubuntu
+
+CMD sleep 5
+```
+
+& this cmd can overlapped by providing the value during run time like below 
+
+```
+Docker run <image name> sleep 10
+```
+
+In this case sleep 10 will overright the sleep 5 in Docker image. 
+
+But what if we want to pass the value of argument durring run time only. Below will be the Dockerfile for that 
+
+```
+FROM Ubuntu
+
+ENTRYPOINT ["sleep"]
+```
+
+In this case when you run the container with providing the value of argument it will append that value in file. for example 
+
+```
+docker run <image-name> 10
+```
+
+where is 10 is value we will append in docker file but if you forget to add value it will give that operand is missing, & this is where you can use both CMD and ENTRYPOINT.
+
+```
+FROM Ubuntu
+
+ENTRYPOING ["sleep"]
+
+CMD ["5"]
+
+```
+******************************************************************************************
+
+# Docker Networking
+
+Docker Create three Network Automatically 
+
+### Bridge, None & Host
+
+Where bridge is the default network a container get attached too. if you want to run a container in different network here is the command you can use. 
+
+```
+Docker run ubuntu --network=host or none
+```
+
+The Defrence between all of these networks is to expose the application in bridge network to outiside world you need to map the port but for Host network the application will be accessible to outside world on same port as host & in Node Network it is isolated application can not be exposed to the outerworld. 
+
+Apart from these Networks Docker creates a user defined Network. 
+
+```
+docker network create \
+  --driver bridge \
+  --subnet 182.18.0.0/16
+  custom isolated-network
+```
+
+Command to list the Docker network
+
+```
+docker network ls
+```
+
+*******************************************************************************************
+
+# Docker storage and file system.
+
+file system 
+
+by default it create the folder structure while install docker 
+
+/var/lib/docker
+  > aufs
+  > Containers
+  > images
+  > volumes
+
+Layered Architecture - 
 
 
-   
+
 
 
 
