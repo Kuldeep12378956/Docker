@@ -226,7 +226,7 @@ Layered Architecture -
 
 if we want to run a complex application need multiple containers of diff os it can be done by using Docker Compose. 
 
-![Screenshot 2023-04-14 at 7 06 46 PM]Screenshot from 2024-04-10 12-39-28.png
+![Screenshot 2023-04-14 at 7 06 46 PM](image2.png)
 
 
 
